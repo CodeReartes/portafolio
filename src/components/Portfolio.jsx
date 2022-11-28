@@ -1,38 +1,122 @@
 import React from "react";
 import proyectoChuckNorrisApiReact from "../assets/portfolio/proyectoChuckNorrisApiReact.png";
 import cursoCss from "../assets/portfolio/cursoCss.png";
-import navbar from "../assets/portfolio/navbar.jpg";
-import reactParallax from "../assets/portfolio/reactParallax.jpg";
-import reactSmooth from "../assets/portfolio/reactSmooth.jpg";
-import reactWeather from "../assets/portfolio/reactWeather.jpg";
+import catalogoProductos from "../assets/portfolio/catalogoProductos.png";
+import chat from "../assets/portfolio/chat.png";
+import landingpage from "../assets/portfolio/landingpage.png";
+import proyectodashboard from "../assets/portfolio/proyectodashboard.png";
 
 const Portfolio = () => {
   const portfolios = [
     {
       id: 1,
       src: proyectoChuckNorrisApiReact,
-      href: "https://www.linkedin.com/in/diego-reartes-34ab4b205/",
-    
+      href: "https://github.com/CodeReartes/Proyecto-Api-Chuck-Norris",
+     
+      child1: (
+        <>
+         Demo
+        </>
+      ),
+      child: (
+        <>
+         Code
+        </>
+      ),
+      
     },
     {
-      id: 2,
-      src: reactParallax,
+      id: 1,
+      src: chat,
+      href : "https://github.com/CodeReartes/chat-mern-reartes",
+      href1:"https://chat-app-reartes.netlify.app/",
+       
+      child1: (
+        
+        <>
+         Code
+        </>
+        
+      ),
+      child: (
+        <>
+         Demo
+        </>
+      ),
+      
     },
-    {
+    { 
       id: 3,
-      src: navbar,
+      src: cursoCss, 
+      href  : "https://codereartes.github.io/",
+      href1 :"https://github.com/CodeReartes/CodeReartes.github.io",
+       
+      child1: (
+        
+        <>
+         Code
+        </>
+        
+      ),
+      child: (
+        <>
+         Demo
+        </>
+      ),
+      
     },
     {
       id: 4,
-      src: reactSmooth,
+      src: catalogoProductos,
+      href: "https://github.com/CodeReartes/Catalogo-Productos-Json",
+      href1: "https://github.com/CodeReartes/Catalogo-Productos-Json",
+       
+      child1: (
+        <>
+         Demo
+        </>
+      ),
+      child: (
+        <>
+         Code
+        </>
+      ),
+      
     },
     {
       id: 5,
-      src: cursoCss,
+      src: landingpage,
+      href: "https://github.com/CodeReartes/landingpage",
+    
+     
+      child1: (
+        <>
+         Demo
+        </>
+      ),
+      child: (
+        <>
+         Code
+        </>
+      ),
+      
     },
     {
       id: 6,
-      src: reactWeather,
+      src: proyectodashboard,
+      href: "https://github.com/CodeReartes/proyecto-dashboard",
+     
+      child1: (
+        <>
+         Demo
+        </>
+      ),
+      child: (
+        <>
+         Code
+        </>
+      ),
+      
     },
   ];
 
@@ -49,21 +133,54 @@ const Portfolio = () => {
           <p className="py-6">Check out some of my work right here</p>
         </div>
 
+
+
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0">
-          {portfolios.map(({ id, src }) => (
+          {portfolios.map(({ id, src, child, child1, href, href1, style, download  }) => (
             <div key={id} className="shadow-md shadow-gray-600 rounded-lg">
+              
               <img
+              key={id}
                 src={src}
                 alt=""
                 className="rounded-md duration-200 hover:scale-105"
               />
               <div className="flex items-center justify-center">
                 <button className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105">
-                  Demo
+                  
+                  <li
+            key={id}
+            
+          >
+            <a
+              href={href}
+             
+              target="_blank"
+              rel="noreferrer"
+            >
+              {child}
+            </a>
+          </li>
+                  
+                  
                 </button>
                 <button className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105">
-                  Code
+                <li
+            key={id}
+            
+          >
+            <a
+              href  ={ href1 }
+             
+              target="_blank"
+              rel="noreferrer"
+            >
+              {child1}
+            </a>
+          </li>
+                  
                 </button>
+               
               </div>
             </div>
           ))}
